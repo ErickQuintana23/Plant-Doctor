@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <title>PlantDoctor - Diagnóstico de Plantas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>🌿 PlantDoctor</h1>
+            <p>Toma una foto y conoce el estado de tu planta</p>
+        </header>
+
+        <main>
+            <!-- Estado de la cámara -->
+            <div class="camera-container" id="cameraContainer">
+                <video id="video" autoplay playsinline></video>
+                <canvas id="canvas" style="display:none;"></canvas>
+                <div class="camera-overlay">
+                    <div class="frame"></div>
+                </div>
+            </div>
+
+            <!-- Botones -->
+            <div class="button-container">
+                <button id="captureBtn" class="btn-primary">
+                    📸 Tomar Foto
+                </button>
+                <button id="galleryBtn" class="btn-secondary">
+                    🖼️ Seleccionar de Galería
+                </button>
+            </div>
+
+            <!-- Resultados -->
+            <div id="resultContainer" class="result-container" style="display:none;">
+                <h2>🔍 Diagnóstico</h2>
+                <div id="plantStatus" class="status-card">
+                    <div class="status-icon" id="statusIcon">✅</div>
+                    <h3 id="statusTitle">Planta Saludable</h3>
+                    <p id="statusDescription">Tu planta luce bien. Sigue cuidándola.</p>
+                    <div class="status-details">
+                        <div class="detail-item">
+                            <span>🌞 Luz:</span>
+                            <span id="lightStatus">Buena</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>💧 Humedad:</span>
+                            <span id="moistureStatus">Adecuada</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>🍃 Hojas:</span>
+                            <span id="leavesStatus">Verdes</span>
+                        </div>
+                    </div>
+                </div>
+                <button id="newPhotoBtn" class="btn-primary">📷 Nueva Foto</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2026 PlantDoctor - Diagnóstico con IA</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

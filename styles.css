@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background: #f0f7f0;
+    color: #2d3748;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.app-container {
+    max-width: 480px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    min-height: 600px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    font-size: 28px;
+    color: #2f855a;
+    font-weight: 700;
+}
+
+header p {
+    color: #718096;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Contenedor de cámara */
+.camera-container {
+    position: relative;
+    background: #1a202c;
+    border-radius: 15px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    margin-bottom: 20px;
+}
+
+#video, #canvas {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.camera-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.frame {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 80%;
+    height: 60%;
+    border: 3px dashed rgba(255,255,255,0.5);
+    border-radius: 15px;
+}
+
+/* Botones */
+.button-container {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.btn-primary, .btn-secondary {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #48bb78;
+    color: white;
+    box-shadow: 0 4px 10px rgba(72, 187, 120, 0.3);
+}
+
+.btn-primary:active {
+    transform: scale(0.95);
+    background: #38a169;
+}
+
+.btn-secondary {
+    background: #edf2f7;
+    color: #2d3748;
+}
+
+.btn-secondary:active {
+    transform: scale(0.95);
+    background: #e2e8f0;
+}
+
+/* Resultados */
+.result-container {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.status-card {
+    background: #f7fafc;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.status-icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.status-card h3 {
+    font-size: 20px;
+    color: #2d3748;
+    margin-bottom: 8px;
+}
+
+.status-card p {
+    color: #718096;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.status-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.detail-item {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.detail-item span:first-child {
+    display: block;
+    font-size: 20px;
+}
+
+.detail-item span:last-child {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2f855a;
+    margin-top: 4px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #a0aec0;
+    font-size: 12px;
+}
+
+/* Mensaje de error */
+.error-message {
+    background: #fed7d7;
+    color: #c53030;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px 0;
+}
